@@ -1,3 +1,17 @@
+# fff-img2sixel
+
+fff with img2sixel image rendering.  
+
+cursor on image file:  
+
+- i -> show small thumbnail(faster).  
+- enter -> show image.  
+
+showing image:  
+
+- anykey -> go back to files.  
+
+
 # fff (*Fucking Fast File-Manager*)
 
 <a href="https://asciinema.org/a/qvNlrFrGB3xKZXb6GkremjZNp" target="_blank"><img src="https://asciinema.org/a/qvNlrFrGB3xKZXb6GkremjZNp.svg" alt="img" height="210px" align="right"/></a>

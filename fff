@@ -360,14 +360,11 @@ draw_img() {
     get_mime_type "${list[scroll]}"
     [[ $mime_type != image/* ]] && return
 
-    # img2sixel isn't installed, do nothing.
+	# img2sixel(libsixel) isn't installed, do nothing.
     type -p img2sixel &>/dev/null || {
-        cmd_line "error: Couldn't find 'img2sixel', is it installed?"
+        cmd_line "error: Couldn't find 'img2sixel', is libsixel installed?"
         return
     }
-
-    # save screen
-    tput smcup
 
     clear_screen
 
@@ -379,9 +376,6 @@ draw_img() {
 
     # Wait for user input.
     read -ern 1
-
-    # restore the screen
-    tput rmcup
 
     redraw
 }
@@ -556,11 +550,9 @@ open() {
 
 		    image/*)
 		        # same as draw_img, but bigger.
-				tput smcup
                 clear_screen
 				img2sixel --height $(($LINES*25)) "${list[scroll]}"
 				read -ern 1
-				tput rmcup
                 redraw
             ;;
 
